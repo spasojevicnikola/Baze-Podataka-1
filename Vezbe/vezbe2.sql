@@ -26,7 +26,7 @@ SELECT mbr, ime, prz, plt, ROWNUM
 FROM (SELECT * FROM radnik ORDER BY plt desc)
 WHERE ROWNUM <= 10;
 
-/*----------------------------------------------------------------------------------------------------------------------------------
+/*----------------------------------------------------------------------------------------------------------------------------------*/
 
 /*Prikazi koliko radnika radi na svakom projektu i koliko je kupno angazovanje (broj casova) na tom projektu.*/
 SELECT spr, COUNT(mbr), SUM(brc) 
@@ -118,7 +118,6 @@ FROM radnik
 WHERE plt > (SELECT plt FROM radnik WHERE mbr = 40);
 
 /*Prikazi mbr, ime, prz, plt radnika ciji je broj sati angazovanja na nekom projektu veci od prosecnog broja sati angazovanja na tom projektu.*/
-                    
 SELECT DISTINCT r.mbr, ime, prz, plt
 FROM radnik r, radproj rp
 WHERE r.mbr = rp.mbr
